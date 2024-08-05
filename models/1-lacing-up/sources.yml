@@ -8,7 +8,5 @@ sources:
       identifier: true
     database: "{{ env_var('DBT_TARGET_DATABASE') }}"
     schema: "{{ env_var('DBT_TARGET_SCHEMA') }}"
-    #database: "DEV_DB"
-    #schema: "KAREY"
     tables:
       - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES
