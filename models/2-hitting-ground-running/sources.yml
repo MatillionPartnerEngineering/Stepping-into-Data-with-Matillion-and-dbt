@@ -4,6 +4,7 @@ sources:
   - name: CHARLIES_SHOE_EMPORIUM
     database: "{{ env_var('DBT_TARGET_DATABASE') }}"
     schema: "{{ env_var('DBT_TARGET_SCHEMA') }}"
+    loaded_at_field: LAST_UPDATED
     tables:
       - name: STG_CHARLIES_SALES
         columns:
@@ -29,7 +30,6 @@ sources:
             tests:
               - dbt_expectations.expect_column_distinct_count_to_be_less_than:
                   value: 16
-        loaded_at_field: LAST_UPDATED
         freshness:
           warn_after:
             count: 1
