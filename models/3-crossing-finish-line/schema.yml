@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: STG_SEARCH_ANALYSIS
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          max_value: 1000 # (Optional)
+    columns:
+      - name: imdbrating
+        description: "IMDB Rating"
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              max_value: 10 # (Optional)
+      - name: watch_priority
+        description: "Analysis of watch priority"
+        tests:
+          - dbt_expectations.expect_column_to_exist
+          - not_null     
+      - name: synopsis
+        #meta:
+          #masking_policy: mp_encrypt_pii
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: VARCHAR
+      - name: id
+        description: "Netflix ID"
+        tests:
+          - unique
+      - name: title
+        description: "Title of movie"
+        tests:
+          - not_null
+      - name: year
+        description: "Release year"
+        tests:
+          - not_null
