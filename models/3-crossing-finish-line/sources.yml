@@ -7,3 +7,6 @@ sources:
     loaded_at_field: LAST_UPDATED
     tables:
       - name: STG_CHARLIES_SALES
+      - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES
+      - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES_OR
+      - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES_CO
