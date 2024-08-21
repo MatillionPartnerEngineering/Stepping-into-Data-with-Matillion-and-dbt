@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: CHARLIES_SHOE_EMPORIUM
+  - name: CHARLIES
     database: "{{ env_var('DBT_TARGET_DATABASE') }}"
     schema: "{{ env_var('DBT_TARGET_SCHEMA') }}"
     loaded_at_field: LAST_UPDATED
