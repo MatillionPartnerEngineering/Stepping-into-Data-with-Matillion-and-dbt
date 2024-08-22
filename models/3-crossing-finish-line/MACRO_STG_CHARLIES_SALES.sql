@@ -1,6 +1,5 @@
 {% macro stg_charlies_sales (grain) %}
-select
-    SELECT
+SELECT
     LAST_UPDATED,
     STORE_LOCATION,
     {{ grain }} as STATE,
@@ -12,5 +11,5 @@ select
     PRODUCT_PRICE,
     REVIEW_INDICATOR,
     REVIEW 
-from {{source('CHARLIES_SHOE_EMPORIUM','SRC_CHARLIES_SHOE_EMPORIUM_SALES_{{ grain }}')}}
+from {{source('CHARLIES_SHOE_EMPORIUM',"SRC_CHARLIES_SHOE_EMPORIUM_SALES_{{ grain }}")}}
 {% endmacro %}
