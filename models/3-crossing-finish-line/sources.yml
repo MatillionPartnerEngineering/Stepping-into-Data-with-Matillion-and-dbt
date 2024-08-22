@@ -6,6 +6,6 @@ sources:
     schema: "{{ env_var('DBT_TARGET_SCHEMA') }}"
     loaded_at_field: LAST_UPDATED
     tables:
-      - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES
+      - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES_FL
       - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES_OR
       - name: SRC_CHARLIES_SHOE_EMPORIUM_SALES_CO

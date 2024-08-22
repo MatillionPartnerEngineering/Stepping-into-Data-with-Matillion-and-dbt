@@ -1,7 +1,9 @@
-SELECT
+{% macro stg_charlies_sales (grain) %}
+select
+    SELECT
     LAST_UPDATED,
     STORE_LOCATION,
-    'FL' as STATE,
+    {{ grain }} as STATE,
     TRANSACTION_ID,
     DATE_PART(year,"TRANSACTION_DATE") as TRANSACTION_YEAR,
     DATE_PART(month,"TRANSACTION_DATE") as TRANSACTION_MONTH,
@@ -9,6 +11,6 @@ SELECT
     SALE_INDICATOR,
     PRODUCT_PRICE,
     REVIEW_INDICATOR,
-    REVIEW
-FROM 
-    {{source('CHARLIES','SRC_CHARLIES_SHOE_EMPORIUM_SALES_FL')}}
+    REVIEW 
+from {{source('CHARLIES_SHOE_EMPORIUM','SRC_CHARLIES_SHOE_EMPORIUM_SALES_{{ grain }}')}}
+{% endmacro %}
