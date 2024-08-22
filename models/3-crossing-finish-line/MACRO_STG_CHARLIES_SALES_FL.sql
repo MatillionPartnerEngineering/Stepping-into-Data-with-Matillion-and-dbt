@@ -1,1 +1,1 @@
-{{ stg_charlies_sales('{{ env_var('DBT_STATE') }}') }}
+{{ stg_charlies_sales('{{ env_var("DBT_STATE") }}') }}
