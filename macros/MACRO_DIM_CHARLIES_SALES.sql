@@ -23,7 +23,6 @@ FROM {{ ref('STG_CHARLIES_SALES_ALLSTATES') }} as SALES
 LEFT JOIN {{ source('CHARLIES','STORE_GM_NAMES')}} as GM
     ON SALES.STORE_ID = GM.STORE_ID
 WHERE
-    STATE = {{ grain }} AND 
-    REVIEW_INDICATOR = 'TRUE'
+    SALES.STATE = '{{ grain }}'
 
 {% endmacro %}
