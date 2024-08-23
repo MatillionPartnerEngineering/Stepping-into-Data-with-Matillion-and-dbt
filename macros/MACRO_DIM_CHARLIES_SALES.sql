@@ -1,6 +1,7 @@
 {% macro dim_charlies_sales(grain) %}
 
 SELECT
+    SALES.STORE_ID,
     SALES.LOCATION_NAME,
     SALES.STATE,
     GM.GM_NAME,
