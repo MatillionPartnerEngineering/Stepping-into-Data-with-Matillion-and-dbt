@@ -2,12 +2,13 @@ version: 2
 
 sources:
   - name: CHARLIES
-    database: "{{ env_var('DBT_TARGET_DATABASE') }}"
-    schema: "{{ env_var('DBT_TARGET_SCHEMA') }}"
+    database: DEV_DB
+    schema: KAREY
+    # database: "{{ env_var('DBT_TARGET_DATABASE') }}"
+    # schema: "{{ env_var('DBT_TARGET_SCHEMA') }}"
     loaded_at_field: LAST_UPDATED
     tables:
       - name: RAW_CHARLIES_SHOE_EMPORIUM_SALES
       - name: CHARLIES_SHOE_EMPORIUM_SHOE_SPECIFICATIONS
       - name: CHARLIES_SHOE_EMPORIUM_STORE_LOCATIONS
       - name: STORE_GM_NAMES
-      
