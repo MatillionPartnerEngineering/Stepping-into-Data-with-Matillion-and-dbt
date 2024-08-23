@@ -11,5 +11,7 @@ SELECT
     PRODUCT_PRICE,
     REVIEW_INDICATOR,
     REVIEW 
-from {{source('CHARLIES_SHOE_EMPORIUM',"SRC_CHARLIES_SHOE_EMPORIUM_SALES_{{ grain }}")}}
+FROM {{ ref('STG_CHARLIES_SALES_ALLSTATES') }}
+WHERE
+    STATE = {{ grain }}
 {% endmacro %}
