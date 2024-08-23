@@ -6,10 +6,6 @@
 }}
 
 SELECT * FROM {{ ref('STG_CHARLIES_SALES_ALLSTATES') }}
---UNION ALL
---SELECT * FROM {{ ref('STG_CHARLIES_SALES_OR') }}
---UNION ALL
---SELECT * FROM {{ ref('STG_CHARLIES_SALES_FL') }}
 
 {% if is_incremental() %}
 
