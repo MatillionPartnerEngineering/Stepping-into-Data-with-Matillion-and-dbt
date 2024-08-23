@@ -24,7 +24,7 @@ SELECT
     "shoes"."CUSHIONING" AS "CUSHIONING", 
     "shoes"."BREATHABILITY" AS "BREATHABILITY" 
 FROM 
-    {{source('CHARLIES','SRC_CHARLIES_SHOE_EMPORIUM_SALES')}} as "sales"
+    {{source('CHARLIES','RAW_CHARLIES_SHOE_EMPORIUM_SALES')}} as "sales"
 LEFT JOIN
     {{source('CHARLIES','CHARLIES_SHOE_EMPORIUM_STORE_LOCATIONS')}} as "stores"
     ON "sales"."STORE_ID" = "stores"."STORE_ID" 
