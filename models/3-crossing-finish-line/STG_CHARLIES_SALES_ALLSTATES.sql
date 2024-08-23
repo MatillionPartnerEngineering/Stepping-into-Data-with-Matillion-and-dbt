@@ -30,4 +30,4 @@ LEFT JOIN
     ON "sales"."STORE_ID" = "stores"."STORE_ID" 
 LEFT JOIN
     {{source('CHARLIES','CHARLIES_SHOE_EMPORIUM_SHOE_SPECIFICATIONS')}} as "shoes"
-    ON "sales"."PRODUCT_NAME" = "shoes"."PRODUCT_NAME";
+    ON "sales"."PRODUCT_NAME" = "shoes"."PRODUCT_NAME"
