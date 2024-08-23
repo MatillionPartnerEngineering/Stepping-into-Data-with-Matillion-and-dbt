@@ -8,6 +8,7 @@
 SELECT
     '{{ run_started_at.strftime("%Y-%m-%d") }}' as LAST_UPDATED,
     "stores"."LOCATION_NAME",
+    "STORE_ID",
     case when "sales"."STORE_ID" between 1 and 20 then 'FL' 
      when "sales"."STORE_ID" between 21 and 40 then 'CO'
      when "sales"."STORE_ID" between 41 and 60 then 'OR'
