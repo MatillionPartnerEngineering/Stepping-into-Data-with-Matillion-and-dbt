@@ -1,4 +1,5 @@
-{% macro dim_charlies_sales (grain) %}
+{% macro dim_charlies_sales(grain) %}
+
 SELECT
     SALES.LOCATION_NAME,
     SALES.STATE,
@@ -24,4 +25,5 @@ LEFT JOIN {{ source('CHARLIES','STORE_GM_NAMES')}} as GM
 WHERE
     STATE = {{ grain }} AND 
     REVIEW_INDICATOR = 'TRUE'
+
 {% endmacro %}
