@@ -17,15 +17,15 @@ models:
       - name: TRANSACTON_YEAR
         tests:
           - dbt_expectations.expect_column_values_to_match_regex:
-            regex: "^\d+$"
+              regex: "^\d+$"
       - name: TRANSACTON_MONTH
         tests:
           - dbt_expectations.expect_column_values_to_match_regex:
-            regex: "^\d+$"
+              regex: "^\d+$"
       - name: PRODUCT_PRICE
         tests:
           - dbt_expectations.expect_column_values_to_match_regex:
-            regex: "^\d+$"
+              regex: "^\d+$"
 #      - name: watch_priority
 #        description: "Analysis of watch priority"
 #        tests:
