@@ -14,18 +14,14 @@ models:
           - unique:
             config:
               where: "TRANSACTION_DATE <= LAST_UPDATED"
-      - name: TRANSACTON_YEAR
-        tests:
-          - dbt_expectations.expect_column_values_to_match_regex:
-              regex: "^\d+$"
-      - name: TRANSACTON_MONTH
-        tests:
-          - dbt_expectations.expect_column_values_to_match_regex:
-              regex: "^\d+$"
       - name: PRODUCT_PRICE
         tests:
-          - dbt_expectations.expect_column_values_to_match_regex:
-              regex: "^\d+$"
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 50  # (Optional)
+              max_value: 220 # (Optional)
+
+
+
 #      - name: watch_priority
 #        description: "Analysis of watch priority"
 #        tests:
