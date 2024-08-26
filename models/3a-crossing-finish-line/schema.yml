@@ -1,10 +1,10 @@
-#version: 2
+version: 2
 
-#models:
-#  - name: STG_SEARCH_ANALYSIS
-#    tests:
-#      - dbt_expectations.expect_table_row_count_to_be_between:
-#          max_value: 1000 # (Optional)
+models:
+  - name: STG_CHARLIES_SALES_ALLSTATES
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          max_value: 75000 # (Optional)
 #    columns:
 #      - name: imdbrating
 #        description: "IMDB Rating"
