@@ -6,14 +6,14 @@ models:
       - dbt_expectations.expect_table_row_count_to_be_between:
           max_value: 75000 # (Optional)
       - dbt_expectations.expect_table_column_count_to_equal:
-          value: 21          
+          value: 21
     columns:
       - name: TRANSACTION_ID
         description: "Unique ID for each sale"
         tests:
           - unique:
-            config:
-              where: "TRANSACTION_DATE <= LAST_UPDATED"
+              config:
+                where: "TRANSACTION_DATE <= LAST_UPDATED"
       - name: PRODUCT_PRICE
         tests:
           - dbt_expectations.expect_column_values_to_be_between:
