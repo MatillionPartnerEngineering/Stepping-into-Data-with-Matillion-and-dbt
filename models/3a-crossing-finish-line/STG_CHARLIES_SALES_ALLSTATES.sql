@@ -38,12 +38,12 @@ SELECT
         ON "sales"."STORE_ID" = "stores"."STORE_ID" 
     LEFT JOIN
         {{source('CHARLIES','CHARLIES_SHOE_EMPORIUM_SHOE_SPECIFICATIONS')}} as "shoes"
-    ON "sales"."PRODUCT_NAME" = "shoes"."PRODUCT_NAME"
+        ON "sales"."PRODUCT_NAME" = "shoes"."PRODUCT_NAME"
     WHERE "sales"."TRANSACTION_DATE" <= '{{ run_started_at.strftime("%Y-%m-%d") }}'
 
 
 {% if is_incremental() %}
 
-WHERE TRANSACTION_ID not in (select TRANSACTION_ID from {{ this }})
+AND TRANSACTION_ID not in (select TRANSACTION_ID from {{ this }})
 
 {% endif %}
