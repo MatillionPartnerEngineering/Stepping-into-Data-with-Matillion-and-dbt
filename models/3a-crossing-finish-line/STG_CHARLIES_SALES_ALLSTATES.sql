@@ -39,7 +39,7 @@ SELECT
     LEFT JOIN
         {{source('CHARLIES','CHARLIES_SHOE_EMPORIUM_SHOE_SPECIFICATIONS')}} as "shoes"
     ON "sales"."PRODUCT_NAME" = "shoes"."PRODUCT_NAME"
-    WHERE "LAST_UPDATED" <= '{{ run_started_at.strftime("%Y-%m-%d") }}'
+    WHERE "sales"."TRANSACTION_DATE" <= '{{ run_started_at.strftime("%Y-%m-%d") }}'
 
 
 {% if is_incremental() %}
