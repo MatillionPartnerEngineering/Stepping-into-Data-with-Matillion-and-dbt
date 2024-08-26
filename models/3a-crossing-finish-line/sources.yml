@@ -7,6 +7,13 @@ sources:
     loaded_at_field: LAST_UPDATED
     tables:
       - name: RAW_CHARLIES_SHOE_EMPORIUM_SALES
+        freshness:
+          warn_after:
+            count: 1
+            period: day
+          error_after:
+            count: 5
+            period: day
       - name: CHARLIES_SHOE_EMPORIUM_SHOE_SPECIFICATIONS
       - name: CHARLIES_SHOE_EMPORIUM_STORE_LOCATIONS
       - name: STORE_GM_NAMES
