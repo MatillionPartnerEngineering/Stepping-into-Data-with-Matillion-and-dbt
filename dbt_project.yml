@@ -38,5 +38,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     # Applies to all files under models/example/
-    example:
+    1-lacing-up:
       +materialized: table
+    2-hitting-ground-running:
+      +materialized: table
+    3a-crossing-finish-line:
+      +materialized: table
+    3b-crossing-finish-line:
+      +materialized: table            
